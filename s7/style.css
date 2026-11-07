@@ -1,0 +1,332 @@
+/*
+    Centria Edu - Basics of Web Development
+
+    Original author: Ville Heikkiniemi
+    Modified by: Joona Vuopala
+    Last modified: 2026-11-07
+*/
+
+:root {
+    --primary: #e10e49;
+    --light: #ffffff;
+    --dark: #1e1e1e;
+    --blue: #263f6a;
+    --green: #284e36;
+    --orange: #e37222;
+    --rose: #c24d52;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+ol,
+ul {
+    list-style-position: inside;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+nav {
+    min-height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* S7 Active Navigation Menu Rule */
+nav a[aria-current="page"] {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.label {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+}
+
+h1 {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1.05;
+}
+
+.hero p {
+    max-width: 600px;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.9rem 1.4rem;
+    background-color: var(--primary);
+    color: var(--light);
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.button:hover {
+    background-color: var(--rose);
+}
+
+.topics {
+    padding: 5rem 0;
+    background-color: #f7f7f7;
+}
+
+.topics h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.topics>.container>p {
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    padding: 2rem;
+    background-color: var(--light);
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    border-radius: 4px;
+    display: block;
+}
+
+.card h3 {
+    margin-bottom: 0.8rem;
+}
+
+.card:nth-child(1) {
+    border-top: 4px solid var(--blue);
+}
+
+.card:nth-child(2) {
+    border-top: 4px solid var(--green);
+}
+
+.card:nth-child(3) {
+    border-top: 4px solid var(--orange);
+}
+
+/* S6 Image Handling Rules */
+.card-bg-faded {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url("images/seaview.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 280px;
+    justify-content: center;
+}
+
+.grayscale-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.grayscale-image:hover {
+    filter: grayscale(0%);
+}
+
+.image-link {
+    display: block;
+    margin-top: 1rem;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.image-link img {
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.25s ease;
+}
+
+.image-link:hover img {
+    transform: scale(1.03);
+}
+
+/* ===================================================
+   S7 Form Styling
+   =================================================== */
+
+.contact-form {
+    max-width: 680px;
+    margin: 0 auto;
+    border-top: 4px solid var(--primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    border: none;
+    padding: 0;
+}
+
+.form-group label,
+.form-group legend {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: #fafafa;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: var(--light);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.radio-options {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 0.25rem;
+}
+
+.radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.contact-form button[type="submit"] {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+    padding: 2rem 0;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    nav ul {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}

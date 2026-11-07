@@ -1,0 +1,119 @@
+<!--
+    Centria Edu - Basics of Web Development
+
+    Original author: Ville Heikkiniemi
+    Modified by: Joona Vuopala
+    Last modified: 2026-10-22
+
+    Based on the original course template.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ville Heikkiniemi">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Centria Edu | Basics of Web Development - Gallery</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    centria <span>edu</span>
+                </div>
+
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#topics">Topics</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+
+                    <span class="label">Basics of Web Development</span>
+
+                    <h1>
+                        Gallery
+                    </h1>
+
+                    <p>
+                        On this page, you will practice integrating images into a web page's overall design.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="topics" id="topics">
+            <div class="container">
+
+                <h2>Gallery photos</h2>
+
+                <div class="cards">
+
+                    <!-- 1. Background Image (Faded via CSS) -->
+                    <article class="card card-bg-faded">
+                        <h3>Sea view</h3>
+                        <p>
+                            A beautiful, calm view across the open sea. The photograph is embedded directly into the
+                            card background and softened with a semi-transparent overlay so this text remains readable.
+                        </p>
+                    </article>
+
+                    <!-- 2. Grayscale Filter Image -->
+                    <article class="card">
+                        <h3>Tammerkoski</h3>
+                        <p>
+                            A scenic view of Tammerkoski, displayed in classic monochrome using the CSS grayscale
+                            filter.
+                        </p>
+                        <img src="images/tammerkoski.jpg" alt="A scenic view of Tammerkoski in black and white"
+                            class="grayscale-image">
+                    </article>
+
+                    <!-- 3. Clickable Image (Opens full-size file in a new tab) -->
+                    <article class="card">
+                        <h3>Hakalahdenkatu</h3>
+                        <p>
+                            A beautiful view of Hakalahdenkatu. Click the photograph below to open the original
+                            full-size image file.
+                        </p>
+                        <a href="images/hakalahdenkatu.jpg" target="_blank" class="image-link"
+                            title="Open full-size photograph">
+                            <img src="images/hakalahdenkatu.jpg"
+                                alt="A beautiful view of Hakalahdenkatu. Click to view full size.">
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Original author: Ville Heikkiniemi | Modified by: Joona Vuopala &copy; 2026 Centria Edu</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
